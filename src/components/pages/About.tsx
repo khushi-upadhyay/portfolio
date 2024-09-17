@@ -24,21 +24,27 @@ import { TypewriterEffect } from "../ui/typewriter-effect";
 export function About() {
     const words = [
         {
-          text: "Build",
+          text: "Hey!",
         },
         {
-          text: "awesome",
+          text: "I",
         },
         {
-          text: "apps",
+          text: "Am",
         },
         {
-          text: "with",
+          text: "Khushi",
+          className: "text-blue-300 dark:text-blue-300",
         },
         {
-          text: "Aceternity.",
-          className: "text-blue-500 dark:text-blue-500",
+          text: "Upadhyay",
+          className: "text-cyan-400 dark:text-cyan-400",
+          // className: "text-blue-500 dark:text-blue-500",
         },
+        // {
+        //   text: "Aceternity.",
+        //   className: "text-blue-500 dark:text-blue-500",
+        // },
       ];
   return (
     <WavyBackground className="max-w-4xl mx-auto pb-40">

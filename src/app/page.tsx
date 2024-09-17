@@ -3,7 +3,10 @@ import { Skills } from "@/components/pages/Skills"
 import { Projects } from "@/components/pages/Projects"
  import { Connect } from "@/components/pages/Connect" 
 import { Experience } from "@/components/pages/Experience"
+import { Form } from "@/components/pages/Form"
+import { Achievement  } from "@/components/pages/Achievement"
 import { Temp } from "@/components/pages/Temp"
+
 
 export default function Home() {
   return (
@@ -11,10 +14,11 @@ export default function Home() {
       <About />
       <Skills/>
       <Projects />
-     
       <Experience />
+      <Achievement />
       <Connect />
-      <Temp/>
+      <Form/>
+      <Temp />
     </div>
   );
 }
