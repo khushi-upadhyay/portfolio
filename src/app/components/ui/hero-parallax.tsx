@@ -109,7 +109,7 @@ export const Header = () => {
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 text-neutral-200">
       Here's a glimpse into some of my projects. 
-      These porjects have not only validated my skills but have also helped me to learn alot.
+      These projects have not only validated my skills but have also helped me to learn alot.
       </p>
     </div>
   );

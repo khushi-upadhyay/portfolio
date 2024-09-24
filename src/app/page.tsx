@@ -1,12 +1,12 @@
-import { About } from "@/components/pages/About"
-import { Skills } from "@/components/pages/Skills"
-import { Achievements } from "@/components/pages/Achievements"
-import { Connect } from "@/components/pages/Connect" 
-import { Experience } from "@/components/pages/Experience"
-import { Form } from "@/components/pages/Form"
-import { Projects } from "@/components/pages/Projects"
+import { About } from "@/app/components/pages/About"
+import { Skills } from "@/app/components/pages/Skills"
+import { Achievements } from "@/app/components/pages/Achievements"
+import { Connect } from "@/app/components/pages/Connect" 
+import { Experience } from "@/app/components/pages/Experience"
+import { Form } from "@/app/components/pages/Form"
+import { Projects } from "@/app/components/pages/Projects"
 
-import { Temp } from "@/components/pages/Temp"
+import { Temp } from "@/app/components/pages/Temp"
 
 
 export default function Home() {
