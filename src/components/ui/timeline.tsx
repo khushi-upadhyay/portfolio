@@ -42,12 +42,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {/* <h2 className="text-lg md:text-4xl mb-4 text-white dark:text-white max-w-4xl">
           Work Experience
         </h2> */}
-         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+         <h2 className="max-w-7xl pl-4 mx-5 text-xl md:text-5xl font-bold text-white  text-neutral-800 dark:text-neutral-200 font-sans">
         Work Experience
       </h2>
-        <p className=" mx-auto text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
+        <p className=" mx-10 text-neutral-700 dark:text-neutral-300 text-s md:text-base max-w-sm">
+          Here&apos;s
+          a timeline of my journey, each experience shaping who I am today.
         </p>
       </div>
 

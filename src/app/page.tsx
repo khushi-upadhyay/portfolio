@@ -1,10 +1,11 @@
 import { About } from "@/components/pages/About"
 import { Skills } from "@/components/pages/Skills"
-import { Projects } from "@/components/pages/Projects"
- import { Connect } from "@/components/pages/Connect" 
+import { Achievements } from "@/components/pages/Achievements"
+import { Connect } from "@/components/pages/Connect" 
 import { Experience } from "@/components/pages/Experience"
 import { Form } from "@/components/pages/Form"
-import { Achievement  } from "@/components/pages/Achievement"
+import { Projects } from "@/components/pages/Projects"
+
 import { Temp } from "@/components/pages/Temp"
 
 
@@ -15,7 +16,7 @@ export default function Home() {
       <Skills/>
       <Projects />
       <Experience />
-      <Achievement />
+      <Achievements />
       <Connect />
       <Form/>
       <Temp />
