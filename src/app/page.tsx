@@ -6,9 +6,6 @@ import { Experience } from "@/app/components/pages/Experience"
 import { Form } from "@/app/components/pages/Form"
 import { Projects } from "@/app/components/pages/Projects"
 
-import { Temp } from "@/app/components/pages/Temp"
-
-
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-black">
@@ -19,7 +16,6 @@ export default function Home() {
       <Achievements />
       <Connect />
       <Form/>
-      <Temp />
     </div>
   );
 }

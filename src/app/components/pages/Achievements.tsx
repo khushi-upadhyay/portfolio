@@ -208,7 +208,7 @@ const IOSContent = () => {
         <br />
         <br />
         <span className="font-bold text-neutral-700">
-          I’m thrilled to be in the top 1% of those chosen for the exclusive iOS Student Developer Program.
+          I&apos; m thrilled to be in the top 1% of those chosen for the exclusive iOS Student Developer Program.
         </span>{" "}
         <br /><br />
         Here are some quick highlights about my journey so far:
@@ -217,7 +217,7 @@ const IOSContent = () => {
             <strong>Apple</strong> and <strong>Infosys</strong> have joined forces to offer this program at SRM Institute of Science and Technology.
           </li><br/>
           <li>
-            I'm honing my skills in Swift and app development, learning from the best in the industry.
+            I&apos; m honing my skills in Swift and app development, learning from the best in the industry.
           </li><br/>
           <li>
             The program not only focuses on coding but also on building apps that solve real-world problems. 
@@ -260,7 +260,7 @@ const NPTELContent = () => {
         <br />
         <br />
         <span className="font-bold text-neutral-700">
-          I'm proud to have attained Elite ranks in the Computer Organization and Architecture NPTEL courses.
+          I&apos; m proud to have attained Elite ranks in the Computer Organization and Architecture NPTEL courses.
         </span>{" "}
         <br /><br />
         Here are some quick highlights about my learning journey:
@@ -303,7 +303,7 @@ const ComputationalContent = () => {
         <br />
         <br />
         <span className="font-bold text-neutral-700">
-          I'm honored to be among the top 20 department rank holders in the Computational Intelligence Department at SRM Institute of Science and Technology.
+          I&apos; m honored to be among the top 20 department rank holders in the Computational Intelligence Department at SRM Institute of Science and Technology.
         </span>{" "}
         <br /><br />
         Here are some quick highlights about my academic journey:
@@ -315,7 +315,7 @@ const ComputationalContent = () => {
             Being in the top 20 rank holders reflects my dedication and passion for mastering subjects like artificial intelligence, machine learning, and computational techniques.
           </li><br/>
           <li>
-            I've honed both theoretical knowledge and practical skills, preparing myself for innovative challenges in the field of computational intelligence.
+            I&apos; ve honed both theoretical knowledge and practical skills, preparing myself for innovative challenges in the field of computational intelligence.
           </li><br/>
         </ul><br/>
       </p>

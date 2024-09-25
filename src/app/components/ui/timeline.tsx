@@ -45,7 +45,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
          <h2 className="max-w-7xl pl-4 mx-5 text-xl md:text-5xl font-bold text-white  text-neutral-800 dark:text-neutral-200 font-sans">
         Work Experience
       </h2>
-        <p className=" mx-10 text-neutral-700 dark:text-neutral-300 text-s md:text-base max-w-sm">
+        <p className=" mx-10 text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
           Here&apos;s
           a timeline of my journey, each experience shaping who I am today.
         </p>

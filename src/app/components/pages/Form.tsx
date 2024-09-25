@@ -20,7 +20,7 @@ export function Form() {
       Get in Touch
       </h2>
       <p className="text-neutral-600 text-ivory text-sm max-w-sm mt-2 dark:text-neutral-300">
-      I'm always happy to connect with like-minded individuals. Feel free to reach out!
+      I&apos; m always happy to connect with like-minded individuals. Feel free to reach out!
       </p>
 
       <form className="my-8" onSubmit={handleSubmit}>
