@@ -7,14 +7,14 @@ export function Projects() {
 }
 export const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
+    title: "Real Estate Housing Price ",
+    link: "https://github.com/khushi-upadhyay/Real-Estate-Housing-Price",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
+    title: "Editofy",
+    link: "https://github.com/khushi-upadhyay/editofy-image-editor-flask-opencv",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/cursor.png",
   },
@@ -88,8 +88,8 @@ export const products = [
       "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
+    title: "Editofy",
+    link: "https://github.com/khushi-upadhyay/editofy-image-editor-flask-opencv",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/invoker.png",
   },
