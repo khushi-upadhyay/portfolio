@@ -6,7 +6,7 @@ const peopleGroup1 = [
   {
     id: 1,
     name: "GitHub",
-    designation: "Khushi's GitHub",
+    designation: "",
     image:
       "/images/connect/github.webp",
     link: "https://github.com/khushi-upadhyay", // Replace with your GitHub URL
@@ -17,7 +17,7 @@ const peopleGroup2 = [
   {
     id: 2,
     name: "LinkedIn",
-    designation: "Khushi's LinkedIn",
+    designation: "",
     image:
       "/images/connect/LinkedIn.png",
     link: "https://www.linkedin.com/in/khushiupadhyay11/", // Replace with your LinkedIn URL
@@ -28,7 +28,7 @@ const peopleGroup3 = [
   {
     id: 3,
     name: "Twitter",
-    designation: "Khushi's Twitter",
+    designation: "",
     image:
       "/images/connect/x.jpeg",
     link: "https://twitter.com/your-twitter-username", // Replace with your Twitter URL
