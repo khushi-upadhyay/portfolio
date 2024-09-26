@@ -5,6 +5,7 @@ import { Connect } from "@/app/components/pages/Connect"
 import { Experience } from "@/app/components/pages/Experience"
 import { Form } from "@/app/components/pages/Form"
 import { Projects } from "@/app/components/pages/Projects"
+import { AnimatedTooltipPreview } from "@/app/components/pages/AnimatedConnect"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Achievements />
       <Connect />
       <Form/>
+      <AnimatedTooltipPreview/>
     </div>
   );
 }

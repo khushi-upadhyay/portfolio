@@ -340,13 +340,13 @@ const data = [
   {
     category: "Department Rank Holder",
     title: "Top 20%",
-    src: "/images/achievements/SRMIST.jpg",
+    src: "/images/achievements/tech-park.jpg",
     content: <ComputationalContent />,
   },
   {
     category: "NPTEL Examination",
     title: "Elite Rank",
-    src: "/images/achievements/NPTELLogo.png",
+    src: "/images/achievements/nptel.png",
     content: <NPTELContent />,
   },
 ];

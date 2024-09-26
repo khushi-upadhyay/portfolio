@@ -97,7 +97,7 @@ export function About() {
         </div>
         
         {/* Flip Words Effect */}
-        <div className="text-5xl mx-auto font-bold text-neutral-600 dark:text-neutral-400 p-4">
+        <div className="text-5xl mx-auto font-bold text-black dark:text-white p-4">
           <FlipWords words={flipWords} />
         </div>
       </div>

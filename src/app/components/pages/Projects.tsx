@@ -195,11 +195,10 @@ export const products = [
   skills: "Swift, Figma, SwiftUI, StoryBoard",
 },
 {
-  title: "Portfolio",
-  link: "https://github.com/khushi-upadhyay/portfolio",
-  thumbnail:
-    "/images/projects/portfolio.jpeg",
-  skills: "Next.js, Tailwind CSS, React.js, HTML, CSS",
+  title: "Recap",
+  link: "https://ui.aceternity.com",
+  thumbnail: "/images/projects/recap.jpeg",
+  skills: "Swift, Figma, SwiftUI, StoryBoard",
 },
 {
   title: "Real Estate Housing Price",
