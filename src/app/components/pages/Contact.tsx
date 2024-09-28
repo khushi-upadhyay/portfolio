@@ -18,7 +18,7 @@ export function Contact() {
       <div className="flex-1 flex flex-col items-center justify-center space-y-8 w-full max-w-lg">
         {" "}
         <p className="text-black dark:text-white text-[3.5rem] font-semibold">
-          Let's Connect<span className="text-[#5046e6]">.</span>
+          Let&apos;s Connect<span className="text-[#5046e6]">.</span>
         </p>
         <form
           className="flex flex-col space-y-4 w-full"
