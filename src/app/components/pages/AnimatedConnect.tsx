@@ -6,10 +6,10 @@ const peopleGroup1 = [
   {
     id: 1,
     name: "GitHub",
-    designation: "",
+    designation: "@khushi-upadhyay",
     image:
       "/images/connect/github.webp",
-    link: "https://github.com/khushi-upadhyay", // Replace with your GitHub URL
+    link: "https://github.com/khushi-upadhyay",
   },
 ];
 
@@ -17,10 +17,10 @@ const peopleGroup2 = [
   {
     id: 2,
     name: "LinkedIn",
-    designation: "",
+    designation: "@khushiupadhyay11",
     image:
       "/images/connect/LinkedIn.png",
-    link: "https://www.linkedin.com/in/khushiupadhyay11/", // Replace with your LinkedIn URL
+    link: "https://www.linkedin.com/in/khushiupadhyay11/",
   },
 ];
 
@@ -28,16 +28,16 @@ const peopleGroup3 = [
   {
     id: 3,
     name: "Twitter",
-    designation: "",
+    designation: "@KhushiUpad96039",
     image:
       "/images/connect/x.jpeg",
-    link: "https://twitter.com/your-twitter-username", // Replace with your Twitter URL
+    link: "https://x.com/KhushiUpad96039",
   },
 ];
 
 export function AnimatedTooltipPreview() {
   return (
-    <div className="flex flex-row items-center justify-center gap-10 w-full">
+    <div className="flex flex-row items-center justify-center bg-white dark:bg-neutral-950 gap-10 w-full -mt-32 h-64">
       {/* First toolkit */}
       <div className="flex items-center justify-center">
         <a href={peopleGroup1[0].link} target="_blank" rel="noopener noreferrer">

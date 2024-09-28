@@ -2,9 +2,13 @@
 "use client";
 import React from "react";
 import { HeroParallax } from "../ui/hero-parallax";
+import { div } from "framer-motion/client";
 
 export function Projects() {
-  return <HeroParallax products={products} />;
+  return (
+    <div className="bg-white dark:bg-neutral-950" id="Projects"><HeroParallax products={products} /></div>
+  
+  );
 }
 
 export const products = [

@@ -12,7 +12,7 @@ export function Nav() {
     },
     {
       name: "Achievements",
-      link: "/Users/admin70/Desktop/portfolio/src/app/components/pages/Achievements.tsx",
+      link: "/Achievements",
       icon: <IconAward className="h-4 w-4 text-neutral-500 dark:text-white" />, // Changed icon for Achievements
     },
     {

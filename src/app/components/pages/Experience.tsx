@@ -144,5 +144,5 @@ export function Experience() {
     },
   ];
 
-  return <Timeline data={data} />;
+  return (<div id="Experience"><Timeline data={data} /></div>);
 }

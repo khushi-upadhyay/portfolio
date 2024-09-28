@@ -3,15 +3,15 @@ import Image from 'next/image';
 
 export function Skills() {
   return (
-    <div className="relative flex h-[900px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
+    <div className="relative flex h-[900px] w-full flex-col items-center justify-center overflow-hidden bg-white dark:bg-neutral-950" id="Skills">
+      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none  dark:from-white dark:to-black">
         Skills
       </span>
 
         {/* Inner Circle - Databases */}
         <OrbitingCircles
         className="size-[60px] border-none bg-transparent"
-        duration={25}
+        duration={20}
         delay={0} 
         radius={100} 
       >
@@ -19,8 +19,8 @@ export function Skills() {
       </OrbitingCircles>
       <OrbitingCircles
         className="size-[60px] border-none bg-transparent"
-        duration={25}
-        delay={12.5} 
+        duration={20}
+        delay={10.5} 
         radius={100} 
       >
         <Icons.mongodb />
@@ -30,7 +30,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[40px] border-none bg-transparent"
         duration={20}
-        delay={10} 
+        delay={15} 
         radius={180} 
         reverse
       >
@@ -38,8 +38,8 @@ export function Skills() {
       </OrbitingCircles>
       <OrbitingCircles
         className="size-[60px] border-none bg-transparent"
-        duration={25}
-        delay={15} 
+        duration={20}
+        delay={20} 
         radius={180} 
         reverse
       >
@@ -47,7 +47,7 @@ export function Skills() {
       </OrbitingCircles>
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
-        duration={30}
+        duration={20}
         delay={10}
         radius={180} 
         reverse
@@ -60,7 +60,7 @@ export function Skills() {
         className="size-[50px] border-none bg-transparent"
         radius={260} 
         duration={15}
-        delay={20} 
+        delay={0} 
        
       >
         <Icons.C />
@@ -106,7 +106,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={330}
-        duration={30}
+        duration={20}
         delay={0} 
         reverse
       >
@@ -115,7 +115,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[60px] border-none bg-transparent"
         radius={330}
-        duration={30}
+        duration={20}
         delay={6}
         reverse
       >
@@ -124,7 +124,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={330}
-        duration={30}
+        duration={20}
         delay={12}
         reverse
       >
@@ -133,7 +133,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={330}
-        duration={30}
+        duration={20}
         delay={18}
         reverse
       >
@@ -142,7 +142,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={330}
-        duration={30}
+        duration={20}
         delay={24}
         reverse
       >
@@ -153,7 +153,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={400} 
-        duration={30}
+        duration={20}
         delay={0} 
        
       >
@@ -162,7 +162,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={400} 
-        duration={30}
+        duration={20}
         delay={5}
     
       >
@@ -171,7 +171,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={400} 
-        duration={30}
+        duration={20}
         delay={10}
     
       >
@@ -180,7 +180,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={400} 
-        duration={30}
+        duration={20}
         delay={15} 
       
       >
@@ -189,7 +189,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={400} 
-        duration={30}
+        duration={20}
         delay={20}
       
       >
@@ -198,7 +198,7 @@ export function Skills() {
       <OrbitingCircles
         className="size-[50px] border-none bg-transparent"
         radius={400} 
-        duration={30}
+        duration={20}
         delay={25} 
       >
         <Icons.HTML />

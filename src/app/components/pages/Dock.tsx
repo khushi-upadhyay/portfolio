@@ -102,7 +102,7 @@ export function Dock() {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#About",
     },
 
     {
@@ -110,7 +110,7 @@ export function Dock() {
       icon: (
         <IconBriefcase className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "/app/components/pages/Experience",
+      href: "#Experience",
     },
     {
       title: "Skills",
@@ -124,7 +124,7 @@ export function Dock() {
       icon: (
         <IconDeviceImacCode className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#Projects",
     },
 
     {
@@ -132,14 +132,14 @@ export function Dock() {
       icon: (
         <IconTrophy className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#Achievements",
     },
     {
-      title: "Contact Me",
+      title: "Contact",
       icon: (
         <IconPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#Contact",
     },
     // {
     //   title: "Resume/CV",

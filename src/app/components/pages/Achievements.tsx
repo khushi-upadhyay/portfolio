@@ -9,7 +9,7 @@ export function Achievements() {
   ));
 
   return (
-    <div className="w-full h-full py-20">
+    <div className="w-full h-full py-20 bg-white dark:bg-neutral-950" id="Achievements">
       <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 text-white dark:text-neutral-200 font-sans">
         Achievements
       </h2>
@@ -202,7 +202,7 @@ const data = [
   {
     category: "NPTEL Examination",
     title: "Elite Rank",
-    src: "/images/achievements/nptel.png",
+    src: "/images/achievements/nptel.jpeg",
     content: <NPTELContent />,
   },
 ];
