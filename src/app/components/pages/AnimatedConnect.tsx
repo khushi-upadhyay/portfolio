@@ -17,10 +17,10 @@ const peopleGroup2 = [
   {
     id: 2,
     name: "LinkedIn",
-    designation: "@khushiupadhyay11",
+    designation: "@khushiupad11",
     image:
       "/images/connect/LinkedIn.png",
-    link: "https://www.linkedin.com/in/khushiupadhyay11/",
+    link: "https://www.linkedin.com/in/khushiupad11/",
   },
 ];
 
@@ -28,10 +28,10 @@ const peopleGroup3 = [
   {
     id: 3,
     name: "Twitter",
-    designation: "@KhushiUpad96039",
+    designation: "@khushiupad11",
     image:
       "/images/connect/x.jpeg",
-    link: "https://x.com/KhushiUpad96039",
+    link: "https://x.com/khushiupad11",
   },
 ];
 
