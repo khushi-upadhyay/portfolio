@@ -196,7 +196,7 @@ const data = [
   {
     category: "Department Rank Holder",
     title: "Top 20%",
-    src: "/images/achievements/tech-park.jpg",
+    src: "/images/achievements/tech-park.webp",
     content: <ComputationalContent />,
   },
   {

@@ -44,7 +44,7 @@ export function Experience() {
               </h2>
               <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
                 <li>Used TensorFlow and advanced tools to optimize machine learning models.</li>
-                <li>mplemented algorithms to address real-world problems.</li>
+                <li>Implemented algorithms to address real-world problems.</li>
               </ul>
             </div>
       ),
@@ -55,7 +55,7 @@ export function Experience() {
       content: (
         <div>
           <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-            Associate Lead at 
+             Lead at 
             <span className="mx-1">
             <a href="https://www.htbsrmist.tech" target="_blank" rel="noopener noreferrer" className="text-blue-500">
               HackTheBox SRMIST

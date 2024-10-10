@@ -13,8 +13,7 @@ export function Nav() {
     {
       name: "Achievements",
       link: "/Achievements",
-      icon: <IconAward className="h-4 w-4 text-neutral-500 dark:text-white" />, // Changed icon for Achievements
-    },
+      icon: <IconAward className="h-4 w-4 text-neutral-500 dark:text-white" />, },
     {
       name: "Skills",
       link: "/Skills",

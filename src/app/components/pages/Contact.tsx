@@ -1,13 +1,33 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 
 export function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Message Sent");
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "Yservice_7japfqj", // Replace with your EmailJS service ID
+          "template_1c3ydjt", // Replace with your EmailJS template ID
+          form.current,
+          "XcoxMGprhpzHY68aN" // Replace with your EmailJS public key
+        )
+        .then(
+          (result) => {
+            console.log("SUCCESS!", result.text);
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    }
   };
 
   return (
@@ -16,11 +36,11 @@ export function Contact() {
       id="Contact"
     >
       <div className="flex-1 flex flex-col items-center justify-center space-y-8 w-full max-w-lg">
-        {" "}
         <p className="text-black dark:text-white text-[3.5rem] font-semibold">
           Let&apos;s Connect<span className="text-[#5046e6]">.</span>
         </p>
         <form
+          ref={form}
           className="flex flex-col space-y-4 w-full"
           onSubmit={handleSubmit}
         >
@@ -29,6 +49,7 @@ export function Contact() {
               <Label htmlFor="fullname">Full Name</Label>
               <Input
                 id="fullname"
+                name="user_name" // Ensure name matches the expected emailjs format
                 placeholder="John Doe"
                 type="text"
                 className="w-full"
@@ -39,6 +60,7 @@ export function Contact() {
             <Label htmlFor="email">Email Address</Label>
             <Input
               id="email"
+              name="user_email" // Ensure name matches the expected emailjs format
               placeholder="johndoe@protonmail.com"
               type="email"
               className="w-full"
@@ -48,6 +70,7 @@ export function Contact() {
             <Label htmlFor="message">Message</Label>
             <Input
               id="message"
+              name="message" // Ensure name matches the expected emailjs format
               placeholder="Type your message here...."
               type="text"
               className="w-full"
@@ -64,7 +87,6 @@ export function Contact() {
           <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
         </form>
       </div>
-
     </div>
   );
 }
