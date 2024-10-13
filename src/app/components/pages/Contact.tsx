@@ -4,29 +4,41 @@ import emailjs from "@emailjs/browser";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
+import toast, { Toaster } from 'react-hot-toast';
 
 export function Contact() {
-  const form = useRef<HTMLFormElement>(null);
+  const form = useRef<HTMLFormElement | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
+    const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    const key = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !key) {
+      console.error(
+        "Missing environment variables. Please ensure Service ID, Template ID, and Public Key are properly set."
+      );
+      toast.error("Failed to send message. Please try again later.");
+      return;
+    }
+
     if (form.current) {
-      emailjs
-        .sendForm(
-          "Yservice_7japfqj", // Replace with your EmailJS service ID
-          "template_1c3ydjt", // Replace with your EmailJS template ID
-          form.current,
-          "XcoxMGprhpzHY68aN" // Replace with your EmailJS public key
-        )
-        .then(
-          (result) => {
-            console.log("SUCCESS!", result.text);
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-          }
-        );
+      emailjs.sendForm(serviceId, templateId, form.current, key).then(
+        () => {
+          console.log("Email successfully sent!");
+          toast.success("Message Sent!");
+          e.target.reset();
+        },
+        (error) => {
+          console.error("Email sending failed. Error details:", error);
+          toast.error("Failed to send message. Please try again later.");
+        }
+      );
+    } else {
+      console.error("Form reference is null. Unable to send email.");
+      toast.error("Failed to send message. Please try again later.");
     }
   };
 
@@ -42,14 +54,14 @@ export function Contact() {
         <form
           ref={form}
           className="flex flex-col space-y-4 w-full"
-          onSubmit={handleSubmit}
+          onSubmit={sendEmail}
         >
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-24 mb-4">
             <LabelInputContainer>
               <Label htmlFor="fullname">Full Name</Label>
               <Input
                 id="fullname"
-                name="user_name" // Ensure name matches the expected emailjs format
+                name="user_name" 
                 placeholder="John Doe"
                 type="text"
                 className="w-full"
@@ -68,12 +80,12 @@ export function Contact() {
           </LabelInputContainer>
           <LabelInputContainer className="mb-4 flex-grow">
             <Label htmlFor="message">Message</Label>
-            <Input
+            <textarea
               id="message"
-              name="message" // Ensure name matches the expected emailjs format
               placeholder="Type your message here...."
-              type="text"
-              className="w-full"
+              name="message"
+              required
+              className="flex h-10 w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm placeholder:text-neutral-400 dark:placeholder-text-neutral-600 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600 disabled:cursor-not-allowed disabled:opacity-50 dark:shadow-[0px_0px_1px_1px_var(--neutral-700)] transition duration-400"
             />
           </LabelInputContainer>
           <button
@@ -83,6 +95,7 @@ export function Contact() {
             Send Message &rarr;
             <BottomGradient />
           </button>
+          <Toaster />
 
           <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
         </form>

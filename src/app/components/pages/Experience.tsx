@@ -33,6 +33,20 @@ export function Experience() {
                 <li>Implemented AI algorithms to optimize website content for higher search engine rankings.</li>
                 <li>Utilized AI-driven analytics to measure and adjust SEO performance.</li>
               </ul>
+
+              <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
+                Volunteer at 
+                <span className="mx-1">
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7225129423459504129?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7225129423459504129%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BIFhv7IDUQzix2b3HIcX2Fw%3D%3Dhttps://www.linkedin.com/posts/khushiupad11_techeducation-summerlearning-stem-activity-7225129423459504129-AHVg?utm_source=share&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="text-blue-500">
+                  Shashkiya Madhyamik Vidhyalya
+                  </a>
+                </span>
+              </h2>
+              <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
+                <li>Conducted a six-week program teaching digital literacy and computer science basics to students.
+                </li>
+                <li>Facilitated hands-on coding and multimedia projects, fostering creativity and technological proficiency in students.</li>
+              </ul>
     
               <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
                 Google AI ML Virtual Intern at 

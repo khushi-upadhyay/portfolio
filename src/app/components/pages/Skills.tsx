@@ -153,7 +153,7 @@ export function Skills() {
         className="size-[50px] border-none bg-transparent"
         radius={400} 
         duration={20}
-        delay={0} 
+        delay={22} 
        
       >
         <Icons.React />
@@ -162,7 +162,7 @@ export function Skills() {
         className="size-[50px] border-none bg-transparent"
         radius={400} 
         duration={20}
-        delay={5}
+        delay={4}
     
       >
         <Icons.NextJS />
@@ -171,7 +171,7 @@ export function Skills() {
         className="size-[50px] border-none bg-transparent"
         radius={400} 
         duration={20}
-        delay={10}
+        delay={8}
     
       >
         <Icons.JavaScript />
@@ -180,7 +180,7 @@ export function Skills() {
         className="size-[50px] border-none bg-transparent"
         radius={400} 
         duration={20}
-        delay={15} 
+        delay={12} 
       
       >
         <Icons.Tailwind />
@@ -189,7 +189,7 @@ export function Skills() {
         className="size-[50px] border-none bg-transparent"
         radius={400} 
         duration={20}
-        delay={20}
+        delay={16}
       
       >
         <Icons.CSS />
@@ -198,7 +198,7 @@ export function Skills() {
         className="size-[50px] border-none bg-transparent"
         radius={400} 
         duration={20}
-        delay={25} 
+        delay={20} 
       >
         <Icons.HTML />
       </OrbitingCircles>
@@ -294,3 +294,4 @@ const Icons = {
 };
 
 export default Icons;
+
