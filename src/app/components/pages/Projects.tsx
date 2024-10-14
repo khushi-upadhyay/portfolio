@@ -90,7 +90,7 @@ export const products = [
 },
 {
   title: "Scrumdinger",
-  link: "/images/projects/scrumdinger.jpeg",
+  link: "https://github.com/khushi-upadhyay/scrumdinger",
   thumbnail:
     "/images/projects/scrumdinger.jpeg",
   skills: "Swift, Figma, SwiftUI, StoryBoard",

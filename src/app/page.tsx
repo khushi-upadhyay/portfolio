@@ -14,8 +14,9 @@ export default function Home() {
     <div className="relative min-h-screen bg-black">
       {/* <Nav /> */}
       <About />
-      <Dock />
+     
       <Experience />
+      <Dock />
       <Skills/>
       <Projects />
       <Achievements />

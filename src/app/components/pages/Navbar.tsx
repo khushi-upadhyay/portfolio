@@ -7,28 +7,32 @@ export function Nav() {
   const navItems = [
     {
       name: "Home",
-      link: "/",
+      link: "#About",
       icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
-      name: "Achievements",
-      link: "/Achievements",
-      icon: <IconAward className="h-4 w-4 text-neutral-500 dark:text-white" />, },
-    {
       name: "Skills",
-      link: "/Skills",
+      link: "#Skills",
       icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />, // Kept existing icon for Skills
     },
+    
     {
       name: "Experience",
-      link: "/Experience",
+      link: "#Experience",
       icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />, // Changed icon for Experience
     },
+
     {
-      name: "Contact",
-      link: "/Form",
-      icon: <IconPhone className="h-4 w-4 text-neutral-500 dark:text-white" />, // Changed icon for Contact
-    },
+      name: "Achievements",
+      link: "#Achievements",
+      icon: <IconAward className="h-4 w-4 text-neutral-500 dark:text-white" />, },
+    
+   
+    // {
+    //   name: "Contact",
+    //   link: "#Contact",
+    //   icon: <IconPhone className="h-4 w-4 text-neutral-500 dark:text-white" />, // Changed icon for Contact
+    // },
   ];
   
   return (

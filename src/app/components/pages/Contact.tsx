@@ -9,13 +9,45 @@ import toast, { Toaster } from 'react-hot-toast';
 export function Contact() {
   const form = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
 
+  //   const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+  //   const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+  //   const key = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+
+  //   if (!serviceId || !templateId || !key) {
+  //     console.error(
+  //       "Missing environment variables. Please ensure Service ID, Template ID, and Public Key are properly set."
+  //     );
+  //     toast.error("Failed to send message. Please try again later.");
+  //     return;
+  //   }
+
+  //   if (form.current) {
+  //     emailjs.sendForm(serviceId, templateId, form.current, key).then(
+  //       () => {
+  //         console.log("Email successfully sent!");
+  //         toast.success("Message Sent!");
+  //         e.target.reset();
+  //       },
+  //       (error) => {
+  //         console.error("Email sending failed. Error details:", error);
+  //         toast.error("Failed to send message. Please try again later.");
+  //       }
+  //     );
+  //   } else {
+  //     console.error("Form reference is null. Unable to send email.");
+  //     toast.error("Failed to send message. Please try again later.");
+  //   }
+  // };
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
     const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
     const key = process.env.NEXT_PUBLIC_PUBLIC_KEY;
-
+  
     if (!serviceId || !templateId || !key) {
       console.error(
         "Missing environment variables. Please ensure Service ID, Template ID, and Public Key are properly set."
@@ -23,13 +55,15 @@ export function Contact() {
       toast.error("Failed to send message. Please try again later.");
       return;
     }
-
+  
     if (form.current) {
       emailjs.sendForm(serviceId, templateId, form.current, key).then(
         () => {
           console.log("Email successfully sent!");
           toast.success("Message Sent!");
-          e.target.reset();
+  
+          // Reset the form using the form reference
+          form.current?.reset();
         },
         (error) => {
           console.error("Email sending failed. Error details:", error);
@@ -41,7 +75,7 @@ export function Contact() {
       toast.error("Failed to send message. Please try again later.");
     }
   };
-
+  
   return (
     <div
       className="flex flex-col md:flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-neutral-950 bg-white relative w-full space-y-8 md:space-y-0 md:space-x-8"
@@ -126,3 +160,4 @@ const LabelInputContainer = ({
     </div>
   );
 };
+export default Contact;

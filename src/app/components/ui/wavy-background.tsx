@@ -73,28 +73,34 @@ export const WavyBackground = ({
       ctx.strokeStyle = waveColors[i % waveColors.length];
       for (x = 0; x < w; x += 5) {
         const y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
+        ctx.lineTo(x, y + h * 0.5); 
       }
       ctx.stroke();
       ctx.closePath();
     }
   };
 
+
   const render = () => {
-    ctx.fillStyle = backgroundFill || "black";
+    
+    const isDarkTheme = document.documentElement.classList.contains("dark");
+  
+    const themeBackgroundFill = isDarkTheme ? "black" : "white"; 
+  
+    ctx.fillStyle = backgroundFill || themeBackgroundFill;
     ctx.globalAlpha = waveOpacity || 0.5;
     ctx.fillRect(0, 0, w, h);
     drawWave(5);
     animationIdRef.current = requestAnimationFrame(render);
   };
+  
 
   useEffect(() => {
     init();
     return () => {
       cancelAnimationFrame(animationIdRef.current);
     };
-  }, [init]); // Added init to dependency array
-
+  }, [init]); 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
     setIsSafari(
