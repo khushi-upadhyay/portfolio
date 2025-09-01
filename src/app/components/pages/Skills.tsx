@@ -1,297 +1,198 @@
-import OrbitingCircles from "@/app/components/magicui/orbiting-circles";
+"use client";
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+interface Skill {
+  name: string;
+  icon: string;
+  level: number;
+}
+
+interface SkillCategories {
+  [key: string]: Skill[];
+}
+
 export function Skills() {
-  return (
-    <div className="relative flex h-[900px] w-full flex-col items-center justify-center overflow-hidden bg-white dark:bg-neutral-950" id="Skills">
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center text-8xl font-semibold leading-none  dark:from-white dark:to-black">
-        Skills
-      </span>
-        {/* Inner Circle - Databases */}
-        <OrbitingCircles
-        className="size-[60px] border-none bg-transparent"
-        duration={20}
-        delay={0} 
-        radius={100} 
-      >
-        <Icons.sql />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[60px] border-none bg-transparent"
-        duration={20}
-        delay={10.5} 
-        radius={100} 
-      >
-        <Icons.mongodb />
-      </OrbitingCircles>
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
 
-      {/* Second Layer - Tools */}
-      <OrbitingCircles
-        className="size-[40px] border-none bg-transparent"
-        duration={20}
-        delay={15} 
-        radius={180} 
-        reverse
-      >
-        <Icons.figma />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[60px] border-none bg-transparent"
-        duration={20}
-        delay={20} 
-        radius={180} 
-        reverse
-      >
-        <Icons.git />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        duration={20}
-        delay={10}
-        radius={180} 
-        reverse
-      >
-        <Icons.linux />
-      </OrbitingCircles>
+  const skillCategories: SkillCategories = {
+    'Programming Languages': [
+      { name: 'Swift', icon: '/images/skills/swift.svg', level: 90 },
+      { name: 'Python', icon: '/images/skills/python.svg', level: 85 },
+      { name: 'JavaScript', icon: '/images/skills/javascript.svg', level: 80 },
+      { name: 'TypeScript', icon: '/images/skills/typescript.svg', level: 75 },
+      { name: 'Java', icon: '/images/skills/java.svg', level: 70 },
+      { name: 'C++', icon: '/images/skills/c++.svg', level: 65 },
+      { name: 'C', icon: '/images/skills/c.svg', level: 60 }
+    ],
+    'Frameworks & Libraries': [
+      { name: 'SwiftUI', icon: '/images/skills/swift.svg', level: 90 },
+      { name: 'UIKit', icon: '/images/skills/swift.svg', level: 85 },
+      { name: 'React', icon: '/images/skills/react.svg', level: 80 },
+      { name: 'Next.js', icon: '/images/skills/nextjs.svg', level: 75 },
+      { name: 'TensorFlow', icon: '/images/skills/tensorflow.svg', level: 70 },
+      { name: 'PyTorch', icon: '/images/skills/pytorch.svg', level: 65 }
+    ],
+    'Tools & Technologies': [
+      { name: 'Git', icon: '/images/skills/git.svg', level: 85 },
+      { name: 'Firebase', icon: '/images/skills/firebase.svg', level: 80 },
+      { name: 'MongoDB', icon: '/images/skills/mongodb.svg', level: 75 },
+      { name: 'SQL', icon: '/images/skills/sql.svg', level: 70 },
+      { name: 'Docker', icon: '/images/skills/docker.svg', level: 65 },
+      { name: 'Jira', icon: '/images/skills/jira.svg', level: 80 }
+    ],
+    'Design & Others': [
+      { name: 'Figma', icon: '/images/skills/figma.svg', level: 75 },
+      { name: 'Linux', icon: '/images/skills/linux-tux.svg', level: 80 },
+      { name: 'AWS', icon: '/images/skills/aws.svg', level: 65 }
+    ]
+  };
 
-      {/* Third Layer - Language Skills (C, C++, Java, Swift, Python) */}
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={260} 
-        duration={15}
-        delay={0} 
-       
-      >
-        <Icons.C />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={260} 
-        duration={15}
-        delay={3}
-     
-      >
-        <Icons.CPlusPlus />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={260} 
-        duration={15}
-        delay={6}
-       
-      >
-        <Icons.Java />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={260} 
-        duration={15}
-        delay={9}
+  const allSkills = Object.values(skillCategories).flat();
+
+  const getSkillsToShow = (): Skill[] => {
+    if (activeCategory === 'all') return allSkills;
+    return skillCategories[activeCategory] || [];
+  };
+
+  const CircularProgress = ({ skill, size = 100 }: { skill: Skill; size?: number }) => {
+    const radius = (size - 12) / 2;
+    const circumference = 2 * Math.PI * radius;
+    const progress = (skill.level / 100) * circumference;
+    const strokeDasharray = `${progress} ${circumference}`;
+
+    return (
+      <div className="relative group cursor-pointer" onClick={() => setSelectedSkill(skill)}>
+        <svg className="transform -rotate-90 w-full h-full" width={size} height={size}>
+          {/* Background circle */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke="rgba(0, 0, 0, 0.1)"
+            strokeWidth="4"
+            fill="transparent"
+            className="dark:stroke-white/10"
+          />
+          {/* Progress circle */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke="url(#gradient)"
+            strokeWidth="4"
+            fill="transparent"
+            strokeDasharray={strokeDasharray}
+            strokeLinecap="round"
+            className="transition-all duration-1000 ease-out"
+          />
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#a855f7" />
+              <stop offset="100%" stopColor="#ec4899" />
+            </linearGradient>
+          </defs>
+        </svg>
         
-      >
-        <Icons.Swift />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[90px] border-none bg-transparent"
-        radius={260} 
-        duration={15}
-        delay={12}
-    
-      >
-        <Icons.Python />
-      </OrbitingCircles>
+        {/* Center content - only icon */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-white/20 to-white/10 border border-white/30 dark:border-white/30 flex items-center justify-center">
+            <Image
+              src={skill.icon}
+              alt={skill.name}
+              width={16}
+              height={16}
+              className="w-4 h-4 object-contain"
+            />
+          </div>
+        </div>
+        
+        {/* Percentage overlay on hover */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20 dark:bg-black/20 rounded-full">
+          <span className="text-white font-bold text-sm">{skill.level}%</span>
+        </div>
+      </div>
+    );
+  };
 
-      {/* Fourth Layer - Python Skills (Numpy, Matlab, TensorFlow, FastAPI, PyTorch) */}
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={330}
-        duration={20}
-        delay={0} 
-        reverse
-      >
-        <Icons.Numpy />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[60px] border-none bg-transparent"
-        radius={330}
-        duration={20}
-        delay={6}
-        reverse
-      >
-        <Icons.Matlab />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={330}
-        duration={20}
-        delay={12}
-        reverse
-      >
-        <Icons.TensorFlow />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={330}
-        duration={20}
-        delay={18}
-        reverse
-      >
-        <Icons.FastAPI />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={330}
-        duration={20}
-        delay={24}
-        reverse
-      >
-        <Icons.PyTorch />
-      </OrbitingCircles>
+  return (
+    <div id="Skills" className="relative min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20">
+      {/* Smooth gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 via-purple-100/20 to-pink-100/20 dark:from-gray-900/50 dark:via-purple-900/20 dark:to-pink-900/20"></div>
+      
+      {/* Floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-16 h-16 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-32 w-12 h-12 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
 
-      {/* Fifth Layer - Libraries/Frameworks (React, Next.js, Tailwind, JavaScript, CSS, HTML) */}
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={400} 
-        duration={20}
-        delay={22} 
-       
-      >
-        <Icons.React />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={400} 
-        duration={20}
-        delay={4}
-    
-      >
-        <Icons.NextJS />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={400} 
-        duration={20}
-        delay={8}
-    
-      >
-        <Icons.JavaScript />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={400} 
-        duration={20}
-        delay={12} 
-      
-      >
-        <Icons.Tailwind />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={400} 
-        duration={20}
-        delay={16}
-      
-      >
-        <Icons.CSS />
-      </OrbitingCircles>
-      <OrbitingCircles
-        className="size-[50px] border-none bg-transparent"
-        radius={400} 
-        duration={20}
-        delay={20} 
-      >
-        <Icons.HTML />
-      </OrbitingCircles>
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <h2 className="text-4xl md:text-6xl font-bold text-center text-gray-900 dark:text-white mb-16">
+          <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Skills
+          </span>
+        </h2>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {['all', ...Object.keys(skillCategories)].map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                activeCategory === category
+                  ? 'bg-gradient-to-r from-purple-400 to-pink-400 text-white shadow-lg'
+                  : 'bg-white/10 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-white/20 border border-white/20 dark:border-white/20'
+              }`}
+            >
+              {category === 'all' ? 'All Skills' : category}
+            </button>
+          ))}
+        </div>
+
+        {/* Skills Grid - 7 icons per row */}
+        <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-6 max-w-6xl mx-auto">
+          {getSkillsToShow().map((skill: Skill, index: number) => (
+            <div
+              key={skill.name}
+              className="flex flex-col items-center"
+              style={{
+                animationDelay: `${index * 0.1}s`
+              }}
+            >
+              <CircularProgress skill={skill} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Skill Detail Modal */}
+      {selectedSkill && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-md w-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-2xl border border-white/20 dark:border-white/20 p-8">
+            <button
+              onClick={() => setSelectedSkill(null)}
+              className="absolute top-4 right-4 text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white text-2xl z-10"
+            >
+              ×
+            </button>
+            <div className="text-center space-y-6">
+              <div className="w-32 h-32 mx-auto">
+                <CircularProgress skill={selectedSkill} size={128} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{selectedSkill.name}</h3>
+                <p className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  {selectedSkill.level}%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-const Icons = {
-  mongodb: () => (
-    <>
-      {/* MongoDB and SQL Icons */}
-      <Image src="/images/skills/mongodb.svg" alt="MongoDB" width={80} height={80} />
-      
-    </>
-  ),
-  sql: () =>(
-    <>
-    <Image src="/images/skills/sql.svg" alt="SQL" width={80} height={80} />
-    </>
-  ),
-  figma: () => (
-    <>
-      {/* Git, Figma, Linux Icons */}
-      
-      <Image src="/images/skills/figma.svg" alt="Figma" width={80} height={80} />
-      
-    </>
-  ),
-  git: () =>(
-    <>
-   <Image src="/images/skills/git.svg" alt="Git" width={80} height={80} />
-    </>
-  ),
-  linux: () =>(
-    <>
-   <Image src="/images/skills/linux-tux.svg" alt="Linux" width={80} height={80} />
-    </>
-  ),
-  // languages
-  C: () => (
-    <Image src="/images/skills/c.svg" alt="C" width={80} height={80} />
-  ),
-  CPlusPlus: () => (
-    <Image src="/images/skills/c++.svg" alt="C++" width={80} height={80} />
-  ),
-  Java: () => (
-    <Image src="/images/skills/java.svg" alt="Java" width={80} height={80} />
-  ),
-  Swift: () => (
-    <Image src="/images/skills/swift.svg" alt="Swift" width={80} height={80} />
-  ),
-  Python: () => (
-    <Image src="/images/skills/python.svg" alt="Python" width={80} height={80} />
-  ),
-
-  
-
- // pythonSkills
-  Numpy: () => (
-    <Image src="/images/skills/numpy.svg" alt="NumPy" width={80} height={80} />
-  ),
-  Matlab: () => (
-    <Image src="/images/skills/matlab.svg" alt="MATLAB" width={80} height={80} />
-  ),
-  TensorFlow: () => (
-    <Image src="/images/skills/tensorflow.svg" alt="TensorFlow" width={80} height={80} />
-  ),
-  FastAPI: () => (
-    <Image src="/images/skills/fastapi.svg" alt="FastAPI" width={80} height={80} />
-  ),
-  PyTorch: () => (
-    <Image src="/images/skills/pytorch.svg" alt="PyTorch" width={80} height={80} />
-  ),
-    // libraries
-  React: () => (
-    <Image src="/images/skills/react.svg" alt="React" width={80} height={80} />
-  ),
-  NextJS: () => (
-    <Image src="/images/skills/nextjs.svg" alt="Next.js" width={80} height={80} />
-  ),
-  Tailwind: () => (
-    <Image src="/images/skills/tailwind.svg" alt="Tailwind CSS" width={80} height={80} />
-  ),
-  JavaScript: () => (
-    <Image src="/images/skills/javascript.svg" alt="JavaScript" width={80} height={80} />
-  ),
-  CSS: () => (
-    <Image src="/images/skills/css.svg" alt="CSS" width={80} height={80} />
-  ),
-  HTML: () => (
-    <Image src="/images/skills/html.svg" alt="HTML" width={80} height={80} />
-  ),
-
-};
-
-export default Icons;
 

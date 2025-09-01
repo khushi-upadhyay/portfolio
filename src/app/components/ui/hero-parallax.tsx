@@ -19,6 +19,7 @@ export const HeroParallax = ({
     link: string;
     thumbnail: string;
     skills: string;
+    description?: string;
   }[];
 }) => {
   const firstRow = products.slice(0, 5);
@@ -126,60 +127,53 @@ export const ProductCard = ({
     link: string;
     thumbnail: string;
     skills: string;
+    description?: string;
   };
   translate: MotionValue<number>;
 }) => {
-  const isExternalLink = product.link.startsWith('http') || product.link.startsWith('https');
-
   return (
-<motion.div
-  style={{
-    x: translate,
-  }}
-  whileHover={{
-    y: -20,
-  }}
-  key={product.title}
-  className="group/product h-96 w-[30rem] relative flex-shrink-0"
->
-  {isExternalLink ? (
-    <a
-      href={product.link}
-      className="block h-full w-full group-hover/product:shadow-2xl"
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
+      style={{
+        x: translate,
+      }}
+      whileHover={{
+        y: -20,
+        scale: 1.05,
+      }}
+      key={product.title}
+      className="group/product h-96 w-[30rem] relative flex-shrink-0 rounded-2xl overflow-hidden glass-card border border-white/20"
     >
       <Image
         src={product.thumbnail}
         height="600"
         width="600"
-        className="object-cover absolute inset-0"
+        className="object-cover absolute inset-0 group-hover/product:scale-110 transition-transform duration-500"
         alt={product.title}
       />
-    </a>
-  ) : (
-    <Link
-      href={product.link}
-      className="block h-full w-full group-hover/product:shadow-2xl"
-    >
-      <Image
-        src={product.thumbnail}
-        height="600"
-        width="600"
-        className="object-cover absolute inset-0"
-        alt={product.title}
-      />
-    </Link>
-  )}
-  <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black cursor-pointer pointer-events-none group-hover/product:pointer-events-auto"></div>
-  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover/product:opacity-100">
-    <a href={product.link} target="_blank" rel="noopener noreferrer" className="text-3xl text-white hover:underline">
-      {product.title}
-    </a>
-    <a href={product.link} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-300 hover:underline">
-      {product.skills}
-    </a>
-  </div>
-</motion.div>
-);
- };
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-90 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-300"></div>
+      <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover/product:opacity-100 transition-opacity duration-300 p-6">
+        <h3 className="text-2xl font-bold text-white text-center mb-2">
+          {product.title}
+        </h3>
+        <p className="text-sm text-pink-300 text-center mb-4">
+          {product.skills}
+        </p>
+        {product.description && (
+          <p className="text-xs text-white/80 text-center line-clamp-3">
+            {product.description}
+          </p>
+        )}
+        <div className="mt-4">
+          <a
+            href={product.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-4 py-2 bg-pink-300 text-black rounded-lg hover:bg-pink-200 transition-colors text-sm font-medium"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+};

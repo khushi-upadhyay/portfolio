@@ -4,25 +4,26 @@
 
 @layer base {
   :root {
+    /* Light Mode - Enhanced Color Theme */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -32,25 +33,26 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Dark Mode - Enhanced Color Theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -65,5 +67,213 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.5s ease-in-out;
   }
+}
+
+/* Enhanced Theme Components */
+@layer components {
+  /* Glass Morphism Effects */
+  .glass-morphism {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-xl rounded-2xl;
+  }
+
+  .glass-card-light {
+    @apply backdrop-blur-lg bg-white/20 border border-white/30 shadow-xl rounded-2xl;
+  }
+  
+  /* Enhanced Light Theme Backgrounds */
+  .light-theme-bg {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 25%, #e2e8f0 50%, #cbd5e1 75%, #94a3b8 100%);
+  }
+
+  .light-theme-bg-alt {
+    background: linear-gradient(135deg, #fef7ff 0%, #f3e8ff 25%, #e9d5ff 50%, #d8b4fe 75%, #c084fc 100%);
+  }
+
+  .light-theme-bg-warm {
+    background: linear-gradient(135deg, #fefce8 0%, #fef3c7 25%, #fde68a 50%, #fcd34d 75%, #f59e0b 100%);
+  }
+  
+  /* Enhanced Dark Theme Backgrounds */
+  .dark-theme-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+  }
+
+  .dark-theme-bg-alt {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #8b5cf6 100%);
+  }
+
+  .dark-theme-bg-warm {
+    background: linear-gradient(135deg, #1c1917 0%, #292524 25%, #44403c 50%, #57534e 75%, #78716c 100%);
+  }
+
+  /* Smooth Background Transitions */
+  .bg-transition {
+    transition: background 0.8s ease-in-out;
+  }
+
+  /* Enhanced Cherry Blossom Backgrounds */
+  .cherry-blossom-bg {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 25%, #fbcfe8 50%, #f9a8d4 75%, #f472b6 100%);
+  }
+
+  .cherry-blossom-bg-dark {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #8b5cf6 100%);
+  }
+
+  .cherry-blossom-bg-image {
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+  }
+
+  .cherry-blossom-bg-image-dark {
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+
+  /* Enhanced Color Utilities */
+  .cherry-pink {
+    @apply text-pink-500 dark:text-pink-400;
+  }
+
+  .cherry-pink-bg {
+    @apply bg-pink-500 dark:bg-pink-400;
+  }
+
+  .cherry-pink-border {
+    @apply border-pink-500 dark:border-pink-400;
+  }
+
+  /* Enhanced Animations */
+  .sakura-petal {
+    @apply absolute w-2 h-2 bg-pink-300 dark:bg-pink-400 rounded-full opacity-60 animate-pulse;
+  }
+
+  .sakura-petal-light {
+    @apply absolute w-1 h-1 bg-pink-200 dark:bg-pink-300 rounded-full opacity-40 animate-pulse;
+  }
+
+  .japanese-border {
+    @apply border-2 border-pink-300 dark:border-pink-400 rounded-lg;
+  }
+
+  /* Enhanced Transitions */
+  .smooth-transition {
+    @apply transition-all duration-500 ease-in-out;
+  }
+
+  .hover-glow {
+    @apply hover:shadow-lg hover:shadow-pink-500/25 dark:hover:shadow-pink-400/25;
+  }
+
+  .hover-glow-light {
+    @apply hover:shadow-lg hover:shadow-purple-500/25 dark:hover:shadow-purple-400/25;
+  }
+}
+
+/* Enhanced Animations */
+@keyframes sakura-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.6);
+  }
+}
+
+@keyframes cherry-blossom-float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(240deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+.animate-sakura-fall {
+  animation: sakura-fall 10s linear infinite;
+}
+
+.animate-gentle-float {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+.animate-cherry-blossom-float {
+  animation: cherry-blossom-float 8s ease-in-out infinite;
+}
+
+/* Enhanced Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #c084fc, #f472b6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7c3aed, #db2777);
 }

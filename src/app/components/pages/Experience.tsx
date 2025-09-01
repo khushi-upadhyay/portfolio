@@ -1,162 +1,203 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-import { Timeline } from "@/app/components/ui/timeline";
+import React, { useState } from "react";
 
 export function Experience() {
-  const data = [
+  const [selectedExperience, setSelectedExperience] = useState(null);
+
+  const experiences = [
     {
-      title: "2024",
-      content: (
-        <div>
-        <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-          Admin at 
-        <span className="mx-1">
-        <a href="https://www.htbsrmist.tech" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-            HackTheBox SRMIST
-          </a>
-        </span>
-      </h2>
-         <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-             <li>Became Admin within two months, demonstrating quick adaptation and leadership.</li>
-             <li> Guided and mentored new members, fostering a collaborative and educational environment.</li>
-         </ul>
-
-    <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-                AI Development Researcher at
-                <span className="mx-1">
-                <a href="https://www.linkedin.com/company/ftv-salon-academy/" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-                  Ftv Salon Academy 
-                  </a>
-                </span>
-              </h2>
-              <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-                <li>Implemented AI algorithms to optimize website content for higher search engine rankings.</li>
-                <li>Utilized AI-driven analytics to measure and adjust SEO performance.</li>
-              </ul>
-
-              <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-                Volunteer at 
-                <span className="mx-1">
-                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7225129423459504129?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7225129423459504129%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BIFhv7IDUQzix2b3HIcX2Fw%3D%3Dhttps://www.linkedin.com/posts/khushiupad11_techeducation-summerlearning-stem-activity-7225129423459504129-AHVg?utm_source=share&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-                  Shashkiya Madhyamik Vidhyalya
-                  </a>
-                </span>
-              </h2>
-              <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-                <li>Conducted a six-week program teaching digital literacy and computer science basics to students.
-                </li>
-                <li>Facilitated hands-on coding and multimedia projects, fostering creativity and technological proficiency in students.</li>
-              </ul>
-    
-              <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-                Google AI ML Virtual Intern at 
-                <span className="mx-1">
-                  <a href="https://www.cloudskillsboost.google" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-                  Google Cloud Skills Boost
-                  </a>
-                </span>
-              </h2>
-              <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-                <li>Used TensorFlow and advanced tools to optimize machine learning models.</li>
-                <li>Implemented algorithms to address real-world problems.</li>
-              </ul>
-            </div>
-      ),
-    },
-    
-    {
-      title: "2023",
-      content: (
-        <div>
-          <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-             Lead at 
-            <span className="mx-1">
-            <a href="https://www.htbsrmist.tech" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-              HackTheBox SRMIST
-              </a>
-            </span>
-          </h2>
-          <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-            <li>Assisted in organizing cybersecurity events and workshops.</li>
-            <li>Supported team activities and helped coordinate member participation.</li>
-          </ul>
-
-        <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-                    Freelance Writer at
-                    <span className="mx-1">
-                    <a href="https://www.linkedin.com/company/stick-dot" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-                      Stick & Dot
-                      </a>
-                    </span>
-                  </h2>
-                  <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-                    <li>Developed SEO-friendly content for diverse industries, boosting client visibility.</li>
-                    <li>Conducted thorough research to exceed client expectations with high-quality articles.</li>
-                  </ul>
-        
-                  <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-                    Research & Data Member 
-                    <span className="mx-1">
-                      <a href="https://think-digital.in" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-                      Placfv&apos;s (SRM Placement Student Team)
-                      </a>
-                    </span>
-                  </h2>
-                  <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-                    <li>Researched companies to identify job opportunities and market trends.</li>
-                    <li>Analyzed data to support placement strategies and enhance student readiness.</li>
-                  </ul>
-                </div>
-      ),
+      title: "iOS Developer",
+      company: "Infosys Limited",
+      period: "2025",
+      image: "/images/connect/LinkedIn.png",
+      description: "Led a 10-member iOS team, integrated Gemini API for intelligent symptom analysis, and optimized Agile workflows.",
+      highlights: [
+        "Led a 10-member iOS team, aligning product owners to ensure timely delivery",
+        "Integrated Gemini API to power intelligent symptom analysis and personalized doctor recommendations",
+        "Conducted rigorous code reviews and resolved merge conflicts, leading to 20% reduction in memory leaks",
+        "Optimized collaborative Agile workflows and sprint planning using Jira, boosting team productivity by 40%"
+      ],
+      color: "from-blue-500/20 to-blue-600/20",
+      borderColor: "border-blue-400/30",
+      textColor: "text-blue-600 dark:text-blue-300"
     },
     {
-      title: "2022",
-      content: (
-        <div>
-
-<h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-            Operations Team Member at 
-            <span className="mx-1">
-            <a href="https://www.htbsrmist.tech" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-              HackTheBox SRMIST
-              </a>
-            </span>
-          </h2>
-          <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-            <li>Engaged with the community to learn and share cybersecurity knowledge.</li>
-            <li>Done publicity and marketing for events and workshops.</li>
-          </ul>
-
-          <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-            Event Team Member at 
-            <span className="mx-1">
-              <a href="https://think-digital.in" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-                Think Digital
-              </a>
-            </span>
-          </h2>
-          <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-            <li>Managed logistics and event operations.</li>
-            <li>Handled public relations and event planning.</li>
-          </ul>
-      
-          <h2 className="text-black dark:text-white text-lg md:text-xl font-bold mb-4">
-            Event Team Member at 
-            <span className="mx-1">
-            <a href="https://www.linkedin.com/in/srmist-daa/" target="_blank" rel="noopener noreferrer" className="text-blue-500">
-              Directorate of Alumni Affairs
-              </a>
-            </span>
-          </h2>
-          <ul className="list-disc list-inside text-black dark:text-white text-sm md:text-sm mb-4">
-            <li>Organized events from scratch</li>
-              <li>Coordinated all aspects of planning and execution.</li>
-          </ul>
-        </div>
-      ),
-      
+      title: "Outreach Summer Intern",
+      company: "National Institute of Technology, Bhopal",
+      period: "2025",
+      image: "/images/achievements/nptel.jpeg",
+      description: "Developed a virtual temperature sensor achieving 96.92% accuracy with Random Forest for internal heat profiling.",
+      highlights: [
+        "Developed a virtual temperature sensor, achieving 96.92% accuracy with Random Forest for internal heat profiling",
+        "Benchmarked advanced ML models, including CNNs and Physics-Informed NNs (PINNs), for robust estimation",
+        "Architected novel ML solutions by integrating physics constraints, enhancing accuracy and model robustness"
+      ],
+      color: "from-green-500/20 to-green-600/20",
+      borderColor: "border-green-400/30",
+      textColor: "text-green-600 dark:text-green-300"
     },
+    {
+      title: "Research Project",
+      company: "IIIT Nagpur",
+      period: "2025",
+      image: "/images/achievements/SRM.png",
+      description: "Addressed challenges in data center energy management by establishing accurate predictive models.",
+      highlights: [
+        "Addressed challenges in data center energy management by establishing accurate predictive models",
+        "Implemented advanced ML models (XGBoost, LSTM) and analyzed smart energy optimization interventions",
+        "Provided energy consumption predictions, achieving R² of 0.9999, and insightful analysis of optimization strategies"
+      ],
+      color: "from-purple-500/20 to-purple-600/20",
+      borderColor: "border-purple-400/30",
+      textColor: "text-purple-600 dark:text-purple-300"
+    },
+    {
+      title: "Software Intern",
+      company: "Highonswift",
+      period: "2024-2025",
+      image: "/images/connect/github.webp",
+      description: "Crafted mobile applications using Swift, SwiftUI, and UIKit, prioritizing clean UI and seamless UX.",
+      highlights: [
+        "Crafted mobile applications using Swift, SwiftUI, and UIKit, prioritizing clean UI and seamless UX",
+        "Integrated RESTful APIs (Firebase, Google Login) and implemented comprehensive testing protocols",
+        "Optimized iOS build pipelines to boost development efficiency by 40% in dynamic startup environment"
+      ],
+      color: "from-pink-500/20 to-pink-600/20",
+      borderColor: "border-pink-400/30",
+      textColor: "text-pink-600 dark:text-pink-300"
+    }
   ];
 
-  return (<div id="Experience"><Timeline data={data} /></div>);
+  const handleCardClick = (experience) => {
+    setSelectedExperience(experience);
+  };
+
+  const closeModal = () => {
+    setSelectedExperience(null);
+  };
+
+  return (
+    <div id="Experience" className="relative min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20">
+      {/* Smooth gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 via-purple-100/20 to-pink-100/20 dark:from-gray-900/50 dark:via-purple-900/20 dark:to-pink-900/20"></div>
+      
+      {/* Floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-20 w-16 h-16 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 left-32 w-12 h-12 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <h2 className="text-4xl md:text-6xl font-bold text-center text-gray-900 dark:text-white mb-16">
+          <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Experience
+          </span>
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {experiences.map((experience, index) => (
+            <div
+              key={index}
+              onClick={() => handleCardClick(experience)}
+              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${experience.color} border ${experience.borderColor} backdrop-blur-sm hover:scale-105 transition-all duration-500 hover:shadow-2xl cursor-pointer`}
+            >
+              {/* Background gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+              
+              <div className="relative p-8 h-full flex flex-col">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{experience.title}</h3>
+                    <p className={`text-lg font-medium ${experience.textColor} mb-1`}>{experience.company}</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">{experience.period}</p>
+                  </div>
+                  
+                  {/* Company logo/image */}
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/20 flex items-center justify-center overflow-hidden">
+                    <Image
+                      src={experience.image}
+                      alt={experience.company}
+                      width={40}
+                      height={40}
+                      className="w-8 h-8 object-contain"
+                    />
+                  </div>
+                </div>
+
+                {/* Description only */}
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-6 flex-1">
+                  {experience.description}
+                </p>
+
+                {/* Click to view all button */}
+                <div className="flex justify-end">
+                  <span className="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-gray-900 dark:hover:text-white transition-colors">
+                    Click to view all →
+                  </span>
+                </div>
+              </div>
+
+              {/* Hover effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Modal */}
+      {selectedExperience && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-2xl border border-white/20 dark:border-white/20 p-8">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white text-2xl z-10"
+            >
+              ×
+            </button>
+            <div className="space-y-6">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h3 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    {selectedExperience.title}
+                  </h3>
+                  <p className={`text-xl font-medium ${selectedExperience.textColor} mt-2`}>
+                    {selectedExperience.company}
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 text-lg">{selectedExperience.period}</p>
+                </div>
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/20 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={selectedExperience.image}
+                    alt={selectedExperience.company}
+                    width={50}
+                    height={50}
+                    className="w-10 h-10 object-contain"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Description</h4>
+                <p className="text-gray-700 dark:text-gray-300">{selectedExperience.description}</p>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Key Achievements</h4>
+                <div className="space-y-3">
+                  {selectedExperience.highlights.map((highlight, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${selectedExperience.textColor} bg-current`}></div>
+                      <p className="text-gray-700 dark:text-gray-300">{highlight}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
