@@ -103,25 +103,29 @@ export function About() {
                 {/* Glass avatar container */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full backdrop-blur-xl border border-white/20 dark:border-white/20 shadow-2xl">
                   {/* Avatar placeholder - you can replace this with your actual avatar */}
-                  <div className="absolute inset-4 bg-gradient-to-br from-purple-400/30 to-pink-400/30 rounded-full flex items-center justify-center">
-                    <div className="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-4 bg-gradient-to-br from-purple-400/20 to-pink-400/30 rounded-full flex items-center justify-center">
+                    <div className="w-[266px] h-[266px] rounded-full flex items-center justify-center overflow-hidden backdrop-blur-2xl bg-gradient-to-br from-purple-400/40 to-pink-400/40 border border-white/30 dark:border-white/30 shadow-2xl">
                       <Image
-                        src="/images/avatar-1.png"
+                        src="/images/about/avatar-1.png"
                         alt="Avatar"
-                        width={96}
-                        height={96}
-                        style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "9999px" }}
-                        className="w-full h-full object-cover rounded-full"
+                        width={229}
+                        height={229}
+                        style={{ width: "229px", height: "229px", objectFit: "contain" }}
+                        className="object-contain"
                       />
                     </div>
                   </div>
                 </div>
                 
                 {/* Laptop */}
-                <div className="absolute -bottom-8 -right-8 w-32 h-20 bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-700 dark:to-gray-800 rounded-lg shadow-2xl border border-gray-400/50 dark:border-gray-600/50">
-                  <div className="absolute inset-2 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-900 rounded-md flex items-center justify-center">
-                    <div className="w-6 h-6 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full"></div>
-                  </div>
+                <div className="absolute -bottom-8 -right-8 w-40 h-25 flex items-center justify-center">
+                  <Image
+                    src="/images/about/coding.gif"
+                    alt="Black Laptop"
+                    width={600}
+                    height={200}
+                    className="object-contain rounded-xl"
+                  />
                 </div>
 
                 {/* Floating elements */}
