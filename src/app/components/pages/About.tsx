@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { TypewriterEffect } from "../ui/typewriter-effect";
 
 export function About() {
@@ -11,7 +12,7 @@ export function About() {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+    }, [roles.length]);
 
   const typewriterWords = [
     {
@@ -92,6 +93,7 @@ export function About() {
               </div>
             </div>
 
+
             {/* Center - Empty space */}
             <div className="hidden lg:block lg:col-span-1"></div>
 
@@ -102,8 +104,15 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full backdrop-blur-xl border border-white/20 dark:border-white/20 shadow-2xl">
                   {/* Avatar placeholder - you can replace this with your actual avatar */}
                   <div className="absolute inset-4 bg-gradient-to-br from-purple-400/30 to-pink-400/30 rounded-full flex items-center justify-center">
-                    <div className="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-4xl font-bold">
-                      K
+                    <div className="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center overflow-hidden">
+                      <Image
+                        src="/images/avatar-1.png"
+                        alt="Avatar"
+                        width={96}
+                        height={96}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "9999px" }}
+                        className="w-full h-full object-cover rounded-full"
+                      />
                     </div>
                   </div>
                 </div>

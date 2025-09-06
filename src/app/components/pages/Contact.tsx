@@ -57,11 +57,11 @@ export function Contact() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Let's Connect
+              Let&apos;s Connect
             </span>
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-lg max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and innovation.
+            I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology and innovation.
           </p>
         </div>
 

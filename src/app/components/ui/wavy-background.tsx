@@ -96,11 +96,25 @@ export const WavyBackground = ({
   
 
   useEffect(() => {
+    const init = () => {
+      canvas = canvasRef.current;
+      ctx = canvas.getContext("2d");
+      w = ctx.canvas.width = window.innerWidth;
+      h = ctx.canvas.height = window.innerHeight;
+      ctx.filter = `blur(${blur}px)`;
+      nt = 0;
+      window.onresize = function () {
+        w = ctx.canvas.width = window.innerWidth;
+        h = ctx.canvas.height = window.innerHeight;
+        ctx.filter = `blur(${blur}px)`;
+      };
+      render();
+    };
     init();
     return () => {
       cancelAnimationFrame(animationIdRef.current);
     };
-  }, [init]); 
+  }, []); 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
     setIsSafari(

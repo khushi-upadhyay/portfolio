@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 export function Experience() {
-  const [selectedExperience, setSelectedExperience] = useState(null);
+  const [selectedExperience, setSelectedExperience] = useState<typeof experiences[0] | null>(null);
 
   const experiences = [
     {
@@ -69,7 +69,7 @@ export function Experience() {
     }
   ];
 
-  const handleCardClick = (experience) => {
+  const handleCardClick = (experience: typeof experiences[0]) => {
     setSelectedExperience(experience);
   };
 

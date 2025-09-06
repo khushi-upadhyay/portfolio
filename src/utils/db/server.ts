@@ -1,15 +1,14 @@
 const mongoose = require("mongoose");
 
-if (!process.env.DATABASE_URI || !process.env.DATABASE_PASSWORD) {
-  throw new Error("DATABASE_URI and DATABASE_PASSWORD must be defined");
-}
-
-const MONGO_URI = process.env.DATABASE_URI.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
-);
-
 const DBInstance = async () => {
+  if (!process.env.DATABASE_URI || !process.env.DATABASE_PASSWORD) {
+    console.error("DATABASE_URI and DATABASE_PASSWORD must be defined");
+    return;
+  }
+  const MONGO_URI = process.env.DATABASE_URI.replace(
+    "<PASSWORD>",
+    process.env.DATABASE_PASSWORD
+  );
   try {
     await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
